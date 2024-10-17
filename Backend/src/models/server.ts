@@ -2,7 +2,10 @@ import express, {Application, Request, Response} from 'express';
 import cors from 'cors';
 import routeProducto from '../routes/producto';
 import routeCategoria from '../routes/categoria';
-
+import routeItems from '../routes/itemZona'
+import routeZonas from '../routes/zona'
+import routeApartamentos from '../routes/apartamento'
+import routeApartamentosDetalles from '../routes/apartamentoDetalle'
 import db from '../db/connection'
 import setupAssociations from './associations';
 
@@ -22,6 +25,8 @@ class Server {
         this.routes();
         this.dbConnect();
         this.listen();
+
+        //Se llaman las relaciones entre tablas
         setupAssociations();
     }
     listen(){
@@ -43,8 +48,13 @@ class Server {
                 mssg:'Api Working'
             })
         })
-        this.app.use('/productos/', routeProducto),
+        // se definen las rutas principales para cada api que se vay a manejar
+        this.app.use('/productos/', routeProducto)
         this.app.use('/categorias', routeCategoria)
+        this.app.use('/items',routeItems)
+        this.app.use('/zonas',routeZonas)
+        this.app.use('/apartamentos',routeApartamentos)
+        this.app.use('/apartamentosDetalles',routeApartamentosDetalles)
     }
 
 

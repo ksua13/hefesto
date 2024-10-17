@@ -82,7 +82,7 @@ export const updateProduct = async (req: Request, res: Response) => {
   }
 };
 
-
+//Funciona para consultar los productos por categoria de producto
 export const getProductosByCategoria = async (req: Request, res: Response) => {
   try {
     const categoriaId = parseInt(req.params.id, 10); // Obtener el ID de la categoría desde los parámetros de la URL

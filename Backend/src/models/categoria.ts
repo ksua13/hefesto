@@ -1,31 +1,3 @@
-// import { Model, DataTypes } from 'sequelize';
-// import db from '../db/connection';
-// import Producto from './producto';
-
-// class Categoria extends Model {}
-
-// Categoria.init({
-//   id: {
-//     type: DataTypes.INTEGER,
-//     primaryKey: true,
-//     autoIncrement: true
-//   },
-//   nombre: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   }
-// }, {
-//   sequelize: db, 
-//   modelName: 'Categoria', 
-//   tableName: 'categorias', 
-//   timestamps: false 
-// });
-
-// Categoria.hasMany(Producto, { foreignKey: 'id_categoria', as: 'productos' });
-
-// export default Categoria;
-
-//NUEVOO
 
 import { Model, DataTypes } from 'sequelize';
 import db from '../db/connection';
